@@ -13,7 +13,7 @@
         android:theme="@style/Theme.ChrisLab7"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".GarciaActivity7"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
