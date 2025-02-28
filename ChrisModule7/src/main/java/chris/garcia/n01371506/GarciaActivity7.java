@@ -16,7 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class GarciaActivity7 extends AppCompatActivity {
+public class GarciaActivity7 extends ActionBar {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
