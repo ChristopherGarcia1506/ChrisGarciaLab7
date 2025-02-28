@@ -7,6 +7,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextClock;
+import android.widget.TextView;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,6 +65,33 @@ public class SettingsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings, container, false);
+        View view = inflater.inflate(R.layout.fragment_settings, container, false);
+
+        //---Setting the date into the textview
+        TextView dateTextView;
+        dateTextView = view.findViewById(R.id.dateTextView);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        String currentDate = dateFormat.format(new Date());
+        dateTextView.setText(currentDate);
+
+        //--- Receiving provinces ---
+
+        TextView provinceText = view.findViewById(R.id.province);
+        TextView indexText = view.findViewById(R.id.index);
+
+
+        Bundle bundle = getArguments();
+        if(bundle != null){
+
+            String province = bundle.getString("Province:");
+            String index = bundle.getString("index:");
+
+            provinceText.setText(province);
+            indexText.setText(index);
+        }
+
+
+
+        return view;
     }
 }

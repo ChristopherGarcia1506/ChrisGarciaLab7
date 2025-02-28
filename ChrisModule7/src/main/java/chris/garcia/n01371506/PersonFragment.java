@@ -7,6 +7,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,6 +62,44 @@ public class PersonFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_person, container, false);
+        View view = inflater.inflate(R.layout.fragment_person, container, false);
+
+        //--- Assigning ListView ---
+        ListView listView = view.findViewById(R.id.ListView);
+
+        //--- Retrieves Array from Strings.xml
+        String[] provinces = getResources().getStringArray(R.array.Provinces);
+
+        //---Displays Data---
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_list_item_1, provinces);
+        listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
+
+                //--- selection and index variables---
+                String selectedProvince = provinces[position];
+                int index = position+1;
+
+               //--- bundle creation to pass data---
+                Bundle bundle = new Bundle();
+                bundle.putString("Province: ",selectedProvince);
+                bundle.putInt("index:",index);
+                //--- Passing data to Settings fragment---
+                Fragment settingsFragment = new SettingsFragment();
+                settingsFragment.setArguments(bundle);
+                getActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.frameLayout,settingsFragment)
+                        .commit();
+
+
+            }
+        });
+
+        return view;
+
     }
 }

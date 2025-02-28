@@ -75,8 +75,6 @@ public class ChrisFragment extends Fragment {
 
                 RadioButton selectedButton = view.findViewById(checkedId);
 
-
-
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 builder.setTitle("Chris Garcia");
                 builder.setIcon(R.drawable.brazuca);
