@@ -67,8 +67,8 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        ProgressBar progressBar = view.findViewById(R.id.progressBar1);
-        ImageButton imageButton = view.findViewById(R.id.imageButton);
+        ProgressBar progressBar = view.findViewById(R.id.CHRprogressBar1);
+        ImageButton imageButton = view.findViewById(R.id.CHRimageButton);
 
 
         imageButton.setOnClickListener(new View.OnClickListener() {

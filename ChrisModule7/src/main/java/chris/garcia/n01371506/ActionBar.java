@@ -28,7 +28,7 @@ public class ActionBar extends AppCompatActivity{
         //--On settings Selected---
         if(item.getItemId() == R.id.tool){
             Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-            intent.setData(Uri.parse("package:" + getPackageName()));
+            intent.setData(Uri.parse("package" + getPackageName()));
             startActivity(intent);
         }
         return false;

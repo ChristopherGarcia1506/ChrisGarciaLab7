@@ -69,22 +69,22 @@ public class SettingsFragment extends Fragment {
 
         //---Setting the date into the textview
         TextView dateTextView;
-        dateTextView = view.findViewById(R.id.dateTextView);
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        dateTextView = view.findViewById(R.id.CHRdateTextView);
+        SimpleDateFormat dateFormat = new SimpleDateFormat(getString(R.string.yyyy_mm_dd), Locale.getDefault());
         String currentDate = dateFormat.format(new Date());
         dateTextView.setText(currentDate);
 
         //--- Receiving provinces ---
 
-        TextView provinceText = view.findViewById(R.id.province);
-        TextView indexText = view.findViewById(R.id.index);
+        TextView provinceText = view.findViewById(R.id.CHRprovince);
+        TextView indexText = view.findViewById(R.id.CHRindex);
 
 
         Bundle bundle = getArguments();
         if(bundle != null){
 
-            String province = bundle.getString("Province:");
-            String index = bundle.getString("index:");
+            String province = bundle.getString(getString(R.string.province_key));
+            String index = bundle.getString(getString(R.string.index_key));
 
             provinceText.setText(province);
             indexText.setText(index);

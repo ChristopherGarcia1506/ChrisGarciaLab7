@@ -65,7 +65,7 @@ public class PersonFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_person, container, false);
 
         //--- Assigning ListView ---
-        ListView listView = view.findViewById(R.id.ListView);
+        ListView listView = view.findViewById(R.id.CHRListView);
 
         //--- Retrieves Array from Strings.xml
         String[] provinces = getResources().getStringArray(R.array.Provinces);
@@ -84,15 +84,15 @@ public class PersonFragment extends Fragment {
 
                //--- bundle creation to pass data---
                 Bundle bundle = new Bundle();
-                bundle.putString("Province: ",selectedProvince);
-                bundle.putInt("index:",index);
+                bundle.putString(getString(R.string.province_key),selectedProvince);
+                bundle.putInt(getString(R.string.index_key),index);
                 //--- Passing data to Settings fragment---
                 Fragment settingsFragment = new SettingsFragment();
                 settingsFragment.setArguments(bundle);
                 getActivity()
                         .getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.frameLayout,settingsFragment)
+                        .replace(R.id.CHRframeLayout,settingsFragment)
                         .commit();
 
 

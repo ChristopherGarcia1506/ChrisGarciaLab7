@@ -41,21 +41,21 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:checked="true"
-            android:text="radio1" />
+            android:text="@string/radio1" />
 
         <RadioButton
             android:id="@+id/CHRradioButton2"
             android:layout_width="96dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:text="radio2" />
+            android:text="@string/radio2" />
 
         <RadioButton
             android:id="@+id/CHRradioButton3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:text="radio3"
+            android:text="@string/radio3"
            />
 
     </RadioGroup>

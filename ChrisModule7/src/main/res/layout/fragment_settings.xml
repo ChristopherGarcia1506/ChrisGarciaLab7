@@ -11,7 +11,7 @@
 
 
     <TextClock
-        android:id="@+id/textClock"
+        android:id="@+id/CHRtextClock"
         android:layout_width="257dp"
         android:layout_height="128dp"
         android:layout_marginStart="128dp"
@@ -25,7 +25,7 @@
 
 
     <TextView
-        android:id="@+id/dateTextView"
+        android:id="@+id/CHRdateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="88dp"
@@ -37,23 +37,23 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/province"
+        android:id="@+id/CHRprovince"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="176dp"
         android:layout_marginBottom="456dp"
-        android:text="PROVINCE"
+        android:text="@string/province"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/index"
+        android:id="@+id/CHRindex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="172dp"
         android:layout_marginTop="404dp"
-        android:text="INDEX"
+        android:text="@string/index"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"

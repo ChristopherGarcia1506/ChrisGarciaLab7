@@ -76,10 +76,10 @@ public class ChrisFragment extends Fragment {
                 RadioButton selectedButton = view.findViewById(checkedId);
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                builder.setTitle("Chris Garcia");
+                builder.setTitle(R.string.chris_garcia);
                 builder.setIcon(R.drawable.brazuca);
                 builder.setMessage(selectedButton.getText().toString());
-                builder.setPositiveButton("Ok", (dialog, which) -> dialog.dismiss());
+                builder.setPositiveButton(R.string.ok, (dialog, which) -> dialog.dismiss());
                 builder.setCancelable(false);
                 builder.show();
             }

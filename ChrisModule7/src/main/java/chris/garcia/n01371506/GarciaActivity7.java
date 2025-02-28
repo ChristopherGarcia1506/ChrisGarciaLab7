@@ -26,7 +26,7 @@ public class GarciaActivity7 extends ActionBar {
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.BottomNav);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,new HomeFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.CHRframeLayout,new HomeFragment()).commit();
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
             Fragment selectedfragment = null;
@@ -42,7 +42,7 @@ public class GarciaActivity7 extends ActionBar {
             }
 
             if(selectedfragment != null){
-               getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,selectedfragment).commit();
+               getSupportFragmentManager().beginTransaction().replace(R.id.CHRframeLayout,selectedfragment).commit();
 
             }
 
