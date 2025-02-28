@@ -5,17 +5,31 @@
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple"
+    android:background="@color/blue"
     tools:context=".HomeFragment">
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="50dp"
-        android:layout_height="35dp"
-        android:layout_marginBottom="576dp"
-        android:text="Home"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="237dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="56dp"
+        android:max="100"
+        android:progress="20"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="196dp"
+        android:src="@drawable/maradona"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

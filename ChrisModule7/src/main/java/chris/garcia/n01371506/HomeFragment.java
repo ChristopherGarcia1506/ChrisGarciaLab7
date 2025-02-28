@@ -1,5 +1,6 @@
 package chris.garcia.n01371506;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,6 +23,8 @@ public class HomeFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    int progress =20;
+    int counter = 0;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -59,6 +65,37 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        ProgressBar progressBar = view.findViewById(R.id.progressBar1);
+        ImageButton imageButton = view.findViewById(R.id.imageButton);
+
+
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                counter++;
+                progress += 20;
+
+                if(counter == 5){
+                    progressBar.setVisibility(View.INVISIBLE);
+                } else if (counter == 7 ) {
+                    Activity activity = getActivity();
+                    if (activity != null) {
+                        activity.finishAffinity(); // Exit the application when counter reaches 7
+                    }
+
+                }
+
+                progressBar.setProgress(progress);
+                Toast.makeText(getContext(), "Chris  Count: "+counter, Toast.LENGTH_SHORT).show();
+
+
+
+            }
+        });
+        return view;
     }
 }
