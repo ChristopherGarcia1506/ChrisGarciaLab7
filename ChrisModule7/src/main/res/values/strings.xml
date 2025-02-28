@@ -3,4 +3,17 @@
     <string name="app_name">ChrisLab7</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="Provinces">
+        <item>Ontario</item>
+        <item>Quebec</item>
+        <item>British Columbia</item>
+        <item>Manitoba</item>
+        <item>Saskatchewan</item>
+        <item>Alberta</item>
+        <item>New Brunswick</item>
+        <item>Newfoundland and Labrador</item>
+        <item>Nova Scotia</item>
+        <item>Prince Edward Island </item>
+    </string-array>
 </resources>
