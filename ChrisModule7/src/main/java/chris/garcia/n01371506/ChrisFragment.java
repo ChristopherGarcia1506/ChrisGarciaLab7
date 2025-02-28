@@ -1,5 +1,6 @@
 package chris.garcia.n01371506;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 /**
@@ -65,6 +68,24 @@ public class ChrisFragment extends Fragment {
 
         //---assigning radioGroup---
         RadioGroup radioGroup = view.findViewById(R.id.CHRRadioGroup);
+
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                RadioButton selectedButton = view.findViewById(checkedId);
+
+
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setTitle("Chris Garcia");
+                builder.setIcon(R.drawable.brazuca);
+                builder.setMessage(selectedButton.getText().toString());
+                builder.setPositiveButton("Ok", (dialog, which) -> dialog.dismiss());
+                builder.setCancelable(false);
+                builder.show();
+            }
+        });
 
 
         return view;
